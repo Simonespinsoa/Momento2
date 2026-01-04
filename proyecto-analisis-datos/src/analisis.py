@@ -3,7 +3,7 @@ Módulo de análisis de datos
 Contiene funciones para análisis y operaciones avanzadas con pandas
 """
 
-import pandas as pd # type: ignore
+import pandas as pd 
 
 
 def filtrar_datos(df, condiciones):
@@ -22,9 +22,9 @@ def filtrar_datos(df, condiciones):
     for columna, valor in condiciones.items():
         if columna in df_filtrado.columns:
             df_filtrado = df_filtrado[df_filtrado[columna] == valor]
-            print(f"✅ Filtrado por {columna} = {valor}:  {len(df_filtrado)} filas")
+            print(f" Filtrado por {columna} = {valor}:  {len(df_filtrado)} filas")
         else:
-            print(f"⚠️  Advertencia: Columna '{columna}' no encontrada")
+            print(f"  Advertencia: Columna '{columna}' no encontrada")
     
     return df_filtrado
 
@@ -53,10 +53,10 @@ def agrupar_datos(df, columna_grupo, columna_agregacion, operacion='sum'):
     if operacion in operaciones:
         resultado = df.groupby(columna_grupo)[columna_agregacion].agg(operacion).reset_index()
         resultado.columns = [columna_grupo, f'{operaciones[operacion]}_{columna_agregacion}']
-        print(f"\n✅ Agrupación por '{columna_grupo}' - {operaciones[operacion]} de '{columna_agregacion}'")
+        print(f"\n Agrupación por '{columna_grupo}' - {operaciones[operacion]} de '{columna_agregacion}'")
         return resultado
     else:
-        print(f"❌ Operación '{operacion}' no válida")
+        print(f" Operación '{operacion}' no válida")
         return df
 
 
@@ -75,11 +75,11 @@ def combinar_dataframes(df1, df2, columna_union, tipo='inner'):
     """
     try:
         df_combinado = pd.merge(df1, df2, on=columna_union, how=tipo)
-        print(f"\n✅ DataFrames combinados ({tipo} join) en columna '{columna_union}'")
+        print(f"\n DataFrames combinados ({tipo} join) en columna '{columna_union}'")
         print(f"   Resultado: {len(df_combinado)} filas")
         return df_combinado
     except Exception as e:
-        print(f"❌ Error al combinar DataFrames: {e}")
+        print(f" Error al combinar DataFrames: {e}")
         return None
 
 
@@ -98,5 +98,5 @@ def top_n_valores(df, columna, n=10, ascendente=False):
     """
     top = df.nlargest(n, columna) if not ascendente else df.nsmallest(n, columna)
     orden = "menores" if ascendente else "mayores"
-    print(f"\n✅ Top {n} {orden} valores de '{columna}'")
+    print(f"\n Top {n} {orden} valores de '{columna}'")
     return top
