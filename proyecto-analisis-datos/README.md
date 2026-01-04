@@ -69,7 +69,7 @@ python main.py
 
 ## 👨‍💻 Autor
 
-[Tu Nombre] - Momento 2 - Enero 2026
+[Simon espinosa betancur] - Momento 2 - Enero 2026
 
 ## 📝 Licencia
 
