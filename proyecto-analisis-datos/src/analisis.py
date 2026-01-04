@@ -1,7 +1,4 @@
-"""
-Módulo de análisis de datos
-Contiene funciones para análisis y operaciones avanzadas con pandas
-"""
+
 
 import pandas as pd 
 
