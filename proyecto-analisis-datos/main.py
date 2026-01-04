@@ -1,5 +1,3 @@
-
-
 # -*- coding: utf-8 -*-
 """
 Script principal para análisis de datos
@@ -44,15 +42,26 @@ def main():
     
     # 1. CARGAR DATOS
     print("\n[PASO 1] Cargando datos...")
-    df = cargar_datos('data/datos.csv')
+    import os
+    ruta_csv = os.path.join(os.path.dirname(__file__), 'data', 'datos.csv')
+    df = cargar_datos(ruta_csv)
     
-    if df is None:
+    if df is None or df.empty:
         print("[ERROR] No se pudieron cargar los datos.")
         print("Asegurate de tener un archivo 'data/datos.csv'")
         sys.exit(1)
     
     # Mostrar resumen inicial
     resumen_datos(df)
+    
+    # 2. LIMPIEZA DE DATOS
+    print("\n[PASO 2] Limpiando datos...")
+    
+    # Detectar duplicados
+    df = detectar_duplicados(df)
+    
+    # Manejar valores nulos
+    df = manejar_valores_nulos(df, estrategia='eliminar')
     
     # 2. LIMPIEZA DE DATOS
     print("\n[PASO 2] Limpiando datos...")
