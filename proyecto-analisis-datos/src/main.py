@@ -34,7 +34,7 @@ def main():
     print("ANALISIS DE DATOS - PROYECTO PYTHON - MOMENTO 2")
     print("="*60)
     
-    # 1. CARGAR DATOS
+    
     print("\n[PASO 1] Cargando datos...")
     df = cargar_datos('data/datos.csv')
     
@@ -46,10 +46,10 @@ def main():
     
     resumen_datos(df)
     
-    # 2. LIMPIEZA DE DATOS
+    
     print("\n[PASO 2] Limpiando datos...")
     
-    # Detectar duplicados
+    
     df = detectar_duplicados(df)
     
   
@@ -59,24 +59,24 @@ def main():
     
     print("\n[OK] Limpieza completada!")
     
-    # 3. ANÁLISIS DE DATOS
+    
     print("\n[PASO 3] Realizando análisis...")
     
-    # PREGUNTA 1: Filtrado
+    
     print("\n" + "-"*60)
     print("[PREGUNTA 1] Filtrado de datos")
     print("-"*60)
     print("Aqui puedes filtrar datos segun condiciones")
     
     
-    # PREGUNTA 2: Agrupación
+    
     print("\n" + "-"*60)
     print("[PREGUNTA 2] Agrupacion de datos (groupby)")
     print("-"*60)
     print("Aqui puedes agrupar y calcular estadisticas")
    
     
-    # PREGUNTA 3: Top valores
+    
     print("\n" + "-"*60)
     print("[PREGUNTA 3] Top N valores")
     print("-"*60)
