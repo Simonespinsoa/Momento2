@@ -4,16 +4,7 @@ import pandas as pd
 
 
 def filtrar_datos(df, condiciones):
-    """
-    Filtra datos según condiciones especificadas
     
-    Args: 
-        df (pd.DataFrame): DataFrame a filtrar
-        condiciones (dict): Diccionario con condiciones {columna: valor}
-        
-    Returns:
-        pd.DataFrame: DataFrame filtrado
-    """
     df_filtrado = df.copy()
     
     for columna, valor in condiciones.items():
