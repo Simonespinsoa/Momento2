@@ -9,7 +9,7 @@ if sys.platform == 'win32':
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-#
+
 sys.path.insert(0, os.path.join(os. path.dirname(__file__), 'src'))
 
 from limpieza_datos import (
