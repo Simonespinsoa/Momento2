@@ -18,18 +18,7 @@ def filtrar_datos(df, condiciones):
 
 
 def agrupar_datos(df, columna_grupo, columna_agregacion, operacion='sum'):
-    """
-    Agrupa datos y realiza operaciones de agregación
     
-    Args: 
-        df (pd.DataFrame): DataFrame a agrupar
-        columna_grupo (str): Columna para agrupar
-        columna_agregacion (str): Columna a agregar
-        operacion (str): 'sum', 'mean', 'count', 'max', 'min'
-        
-    Returns:
-        pd.DataFrame: DataFrame agrupado
-    """
     operaciones = {
         'sum': 'suma',
         'mean': 'promedio',
